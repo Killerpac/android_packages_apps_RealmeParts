@@ -5,7 +5,8 @@
     "RMX1855",
     "RMX1971",
     "RMX3085",
-    "NASHC"
+    "NASHC",
+    "RMX3085L1"
   ],
   "dc": [
     "RMX1931",
@@ -13,7 +14,8 @@
     "RMX1992",
     "RMX1993",
     "RMX3085",
-    "NASHC"
+    "NASHC",
+    "RMX3085L1"
   ],
   "hbm": [
     "RMX1931",
@@ -21,14 +23,13 @@
     "RMX1992",
     "RMX1993",
     "RMX3085",
+    "RMX3085L1",
     "NASHC"
   ],
   "srgb": [
     "RMX1931",
     "RMX1991",
     "RMX1992",
-    "RMX1993",
-    "RMX3085",
-    "NASHC"
+    "RMX1993"
   ]
 }
