@@ -72,5 +72,7 @@ public class GameModeTileService extends TileService {
         Utils.writeValue(DeviceSettings.TP_LIMIT_ENABLE, enabled ? "1" : "0");
         Utils.writeValue(DeviceSettings.TP_DIRECTION, enabled ? "0" : "1");
         SystemProperties.set("perf_profile", enabled ? "0" : "1");
+        getQsTile().setState(enabled ? Tile.STATE_INACTIVE : Tile.STATE_ACTIVE);
+        getQsTile().updateTile();
     }
 }
