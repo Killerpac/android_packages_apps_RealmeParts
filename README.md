@@ -29,8 +29,7 @@ Here is a complete detailed list of the features with their caveats and support 
 - **HBM Mode**: High Brightness Mode bumps your screen's peak luminance for better visibility outdoors at the cost of increased battery drain.
 
 - **Misc Settings**: 
-  - USB-OTG power supply for supported external devices,
-  - FPS Overlay toogle to show current FPS
+  - USB-OTG power supply for supported external devices
 
 - **Screen Refresh Rate Mode**:
   - Ability to choose between 60Hz or 90Hz,

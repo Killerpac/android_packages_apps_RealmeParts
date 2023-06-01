@@ -54,7 +54,6 @@ public class DeviceSettings extends PreferenceFragment
     public static final String KEY_DND_SWITCH = "dnd";
     public static final String KEY_CABC = "cabc";
     public static final String CABC_SYSTEM_PROPERTY = "persist.cabc_profile";
-    public static final String KEY_FPS_INFO = "fps_info";
     public static final String KEY_SETTINGS_PREFIX = "device_setting_";
     public static final String TP_LIMIT_ENABLE = "/proc/touchpanel/oplus_tp_limit_enable";
     public static final String TP_DIRECTION = "/proc/touchpanel/oplus_tp_direction";
@@ -78,7 +77,6 @@ public class DeviceSettings extends PreferenceFragment
     private TwoStatePreference mOTGModeSwitch;
     private TwoStatePreference mGameModeSwitch;
     private TwoStatePreference mSmartChargingSwitch;
-    private SwitchPreference mFpsInfo;
     private boolean CABC_DeviceMatched;
     private boolean DC_DeviceMatched;
     private boolean HBM_DeviceMatched;
@@ -150,10 +148,6 @@ public class DeviceSettings extends PreferenceFragment
         mRefreshRate60.setChecked(!RefreshRateSwitch.isCurrentlyEnabled(this.getContext()));
         mRefreshRate60.setOnPreferenceChangeListener(new RefreshRateSwitch(getContext()));
 
-        mFpsInfo = findPreference(KEY_FPS_INFO);
-        mFpsInfo.setChecked(prefs.getBoolean(KEY_FPS_INFO, false));
-        mFpsInfo.setOnPreferenceChangeListener(this);
-
         mCABC = (SecureSettingListPreference) findPreference(KEY_CABC);
         mCABC.setValue(Utils.getStringProp(CABC_SYSTEM_PROPERTY, "0"));
         mCABC.setSummary(mCABC.getEntry());
@@ -194,14 +188,6 @@ public class DeviceSettings extends PreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mFpsInfo) {
-            boolean enabled = (Boolean) newValue;
-            if (enabled) {
-                Utils.startService(this.getContext(), com.realmeparts.FPSInfoService.class);
-            } else {
-                Utils.stopService(this.getContext(), com.realmeparts.FPSInfoService.class);
-            }
-        }
 
         if (preference == mChargingSpeed) {
             mChargingSpeed.setValue((String) newValue);
