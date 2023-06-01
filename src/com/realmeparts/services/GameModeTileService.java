@@ -65,7 +65,6 @@ public class GameModeTileService extends TileService {
     @Override
     public void onClick() {
         super.onClick();
-        mNotificationManager = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         enabled = GameModeSwitch.isCurrentlyEnabled(this);
         Utils.writeValue(GameModeSwitch.getFile(), enabled ? "0" : "1");
